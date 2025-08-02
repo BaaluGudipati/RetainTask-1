@@ -1,36 +1,26 @@
-# User Management API — Refactored Version
+User Management API – Refactored & Refined
+A sleek, secure, and fully-documented rewrite of the legacy user-management service. Clean architecture, hardened security, and zero breaking changes.
 
-## Overview
-This is a refactored version of a legacy User Management API. The task focused on fixing critical code issues, improving security, organizing the codebase, and maintaining the API’s core functionality.
+Getting Started
+1. Prerequisites
+   - Python 3.8+
+   - SQLite3 (bundled with Python)
+   - pip
+2. One-line Launch
+   pip install -r requirements.txt && python init_db.py && python app.py
+   API spins up at → http://localhost:5009
 
-## How to Run
+Endpoints
+GET  /                 Health Check
+GET  /users            Get all users
+GET  /user/<id>        Get user by ID
+POST /users            Create new user
+PUT  /user/<id>        Update user details
+DELETE /user/<id>      Delete user
+GET  /search?name=<n>  Search users by name
+POST /login            User login
 
-### Prerequisites
-- Python 3.8+
-- SQLite3 (comes with Python)
-- pip (Python package manager)
-
-### Setup Instructions
-```bash
-pip install -r requirements.txt
-python init_db.py
-python app.py
-The API will be available at: http://localhost:5009
-
-API Endpoints
-Endpoint	Method	Description
-/	GET	Health Check
-/users	GET	Get all users
-/user/<id>	GET	Get user by ID
-/users	POST	Create new user
-/user/<id>	PUT	Update user details
-/user/<id>	DELETE	Delete user
-/search?name=<name>	GET	Search users by name
-/login	POST	User login
-
-Project Structure
-Copy
-Edit
+Project Tree
 messy-migration/
 ├── app.py
 ├── init_db.py
@@ -44,21 +34,12 @@ messy-migration/
 └── utils/
     ├── auth.py
     └── validators.py
-Changes & Improvements
-All refactoring decisions and improvements are documented in CHANGES.md. Below is a summary of major fixes implemented in the codebase:
 
-Passwords are now securely hashed using PBKDF2-SHA256 instead of being stored as plaintext.
-
-SQL Injection vulnerabilities fixed by replacing unsafe raw queries with parameterized queries.
-
-Codebase modularized — Separated routes, models, and utility functions into respective folders for better structure.
-
-Database connections handled per request to ensure thread-safety and avoid global DB connection issues.
-
-Added input validation for creating, updating, and logging in users to prevent invalid or malicious data entries.
-
-API responses have been standardized using JSON responses and correct HTTP status codes.
-
-Sensitive information (such as passwords) is never exposed in API responses.
-
-For a detailed explanation of all changes, please refer to CHANGES.md.
+Key Improvements
+- Passwords hashed with PBKDF2-SHA256 (no plaintext ever)
+- Parameterized queries eliminate SQL injection
+- Modular codebase: routes, models, utilities separated
+- Per-request DB connections for thread safety
+- Robust input validation on create/update/login
+- Standardized JSON responses & correct HTTP codes
+- Sensitive data never exposed in responses
