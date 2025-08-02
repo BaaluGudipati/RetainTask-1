@@ -34,6 +34,7 @@ This project focuses on fixing **critical security flaws**, restructuring the co
 
 ## 🗂️ Folder Structure
 
+```bash
 messy-migration/
 ├── app.py
 ├── init_db.py
