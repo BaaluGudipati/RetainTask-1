@@ -1,6 +1,7 @@
 When I got the code, it was working but had serious real-world risks. So I focused on fixing the biggest problems first, while keeping the project simple and functional.
 
 The Critical Issues I Fixed:
+
 1️⃣ Passwords Were Stored in Plaintext (Critical Security Flaw)
 Original code was storing raw passwords in the database.
 
@@ -59,5 +60,6 @@ Fix real-world security risks first (Passwords, SQL Injection).
 Make the code organized and maintainable.
 
 Ensure API remains fully functional after refactor.
+
 
 I didn’t over-engineer — I kept it simple and solved the problems that matter in a real production scenario.
