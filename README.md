@@ -34,3 +34,17 @@ This project focuses on fixing **critical security flaws**, restructuring the co
 
 ## 🗂️ Folder Structure
 
+messy-migration/
+├── app.py
+├── init_db.py
+├── requirements.txt
+├── CHANGES.md
+├── README.md
+├── models/
+│ └── user_model.py
+├── routes/
+│ └── user_routes.py
+└── utils/
+├── auth.py
+└── validators.py
+
